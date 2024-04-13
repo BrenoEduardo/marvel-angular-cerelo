@@ -1,0 +1,65 @@
+<!-- tic-tac-toe.component.html -->
+
+<div class="tic-tac-toe-container">
+  <div class="characters">
+    <div class="character">
+      <img
+        [src]="
+          leftCharacter.thumbnail.path +
+          '/portrait_uncanny.' +
+          leftCharacter.thumbnail.extension
+        "
+        alt="Left Character"
+      />
+      <div class="character-label">{{ leftCharacter.name }}</div>
+      <div class="character-label">
+        Jogador: {{ characterPlayerStatic === "X" ? "X" : "O" }}
+      </div>
+    </div>
+    <div class="game-board"></div>
+    <div class="character">
+      <img
+        [src]="
+          rightCharacter.thumbnail.path +
+          '/portrait_uncanny.' +
+          rightCharacter.thumbnail.extension
+        "
+        alt="Right Character"
+      />
+      <div class="character-label">{{ rightCharacter.name }}</div>
+      <div class="character-label">
+        Jogador: {{ characterPlayerStatic === "X" ? "O" : "X" }}
+      </div>
+    </div>
+  </div>
+  <h2 class="game-title">Jogo da Velha</h2>
+  <div class="game-board">
+    <div
+      *ngFor="let cell of board; let i = index"
+      class="game-cell"
+      [class.winner]="checkWinner() === currentPlayer && cell === currentPlayer"
+      (click)="makeMove(i)"
+    >
+      {{ cell }}
+    </div>
+  </div>
+  <div class="win-counters">
+    <h2 class="game-title">Placar de vencedores</h2>
+    <div class="left-counter">
+      <span>{{ leftCharacter.name }}:</span>
+      <span style="padding-top: 10px">{{ leftWins }}</span>
+    </div>
+    <div class="right-counter">
+      <span>{{ rightCharacter.name }}:</span>
+      <span style="padding-top: 10px">{{ rightWins }}</span>
+    </div>
+  </div>
+  <div class="game-status" *ngIf="checkWinner()">
+    <span *ngIf="checkWinner() === 'tie'; else winner">Empate!</span>
+    <ng-template #winner>{{ checkWinner() }} Venceu!</ng-template>
+  </div>
+  <div>
+    <button class="back-button" (click)="backChampions()">Voltar</button>
+    <button class="restart-button" (click)="resetGame()">Reiniciar Jogo</button>
+  </div>
+</div>
