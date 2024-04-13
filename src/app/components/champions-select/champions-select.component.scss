@@ -1,0 +1,141 @@
+/* champions-select.component.scss */
+
+.dbz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px;
+}
+
+.player1-characters,
+.player2-characters {
+  text-align: center;
+}
+
+.player1-characters h2,
+.player2-characters h2 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dbz-character-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dbz-character {
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.dbz-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.dbz-character h4 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+.dbz-divider {
+  width: 4px;
+  height: 23vh;
+  background-color: #fff;
+  margin: 0 20px;
+}
+.divider{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.character-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-right: 90px;
+}
+.character-info-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 90px;
+}
+.character-big {
+  text-align: center;
+  width: 200px;
+}
+.filter-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.fliperama-input {
+  width: 200px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 4px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  outline: none;
+}
+
+.fliperama-input::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.fliperama-input:focus::placeholder {
+  opacity: 0.5;
+}
+.vs {
+  font-size: 60px;
+  padding: 10px;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+}
+.fliperama-input::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #fff;
+}
+.character-big img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  margin-bottom: 10px;
+}
+
+.character-big h3 {
+  font-size: 20px;
+  max-width: 200px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', cursive;
+}
+.selected-character{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}

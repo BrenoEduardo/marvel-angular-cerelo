@@ -1,0 +1,94 @@
+<!-- champions-select.component.html -->
+
+<div class="dbz-container">
+  <div class="player1-characters">
+    <h2>Jogador 1</h2>
+    <div class="filter-input">
+      <input
+        type="text"
+        placeholder="Filtrar jogador 1..."
+        class="fliperama-input"
+        (keyup)="filterChampions($event.target.value, 'left')"
+      />
+    </div>
+    <div class="dbz-character-row">
+      <div
+        class="dbz-character"
+        *ngFor="let champion of leftChampions"
+        (click)="showCharacter(champion, 'left')"
+      >
+        <img
+          [src]="
+            champion.thumbnail.path +
+            '/portrait_uncanny.' +
+            champion.thumbnail.extension
+          "
+          alt="Character Thumbnail"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="selected-character">
+    <div class="character-info">
+      <div class="character-big">
+        <img
+          *ngIf="selectedLeftCharacter"
+          [src]="
+            selectedLeftCharacter?.thumbnail.path +
+            '/portrait_uncanny.' +
+            selectedLeftCharacter?.thumbnail.extension
+          "
+          alt="Selected Left Character"
+        />
+        <h3>{{ selectedLeftCharacter?.name }}</h3>
+      </div>
+    </div>
+    <div class="divider">
+      <div class="dbz-divider"></div>
+      <div class="vs">VS</div>
+      <div class="dbz-divider"></div>
+    </div>
+
+    <div class="character-info-2">
+      <div class="character-big">
+        <img
+          *ngIf="selectedRightCharacter"
+          [src]="
+            selectedRightCharacter?.thumbnail.path +
+            '/portrait_uncanny.' +
+            selectedRightCharacter?.thumbnail.extension
+          "
+          alt="Selected Right Character"
+        />
+        <h3>{{ selectedRightCharacter?.name }}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="player2-characters">
+    <h2>Jogador 2</h2>
+    <div class="filter-input">
+      <input
+        type="text"
+        placeholder="Filtrar jogador 1..."
+        class="fliperama-input"
+        (keyup)="filterChampions($event.target.value, 'right')"
+      />
+    </div>
+    <div class="dbz-character-row">
+      <div
+        class="dbz-character"
+        *ngFor="let champion of rightChampions"
+        (click)="showCharacter(champion, 'right')"
+      >
+        <img
+          [src]="
+            champion.thumbnail.path +
+            '/portrait_uncanny.' +
+            champion.thumbnail.extension
+          "
+          alt="Character Thumbnail"
+        />
+      </div>
+    </div>
+  </div>
+</div>
