@@ -5,6 +5,7 @@ em um jogo da velha, onde os jogadores são personagens da marvel, estou utiliza
 
 ## Servidor de Desenvolvimento
 
+Primeiramente e necessario o seu Node estar na versão 12.11.0, logo apos isso de um npm install, para instalar as dependencias do projeto.
 Execute `ng serve` para iniciar um servidor de desenvolvimento. Navegue para `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
 ## Execução de Testes Unitários
