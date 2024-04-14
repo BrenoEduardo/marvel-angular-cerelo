@@ -1,0 +1,14 @@
+<div class="character">
+  <img
+    [src]="
+      character.thumbnail.path +
+      '/portrait_uncanny.' +
+      character.thumbnail.extension
+    "
+    alt="Left Character"
+  />
+  <div class="character-label">{{ character.name }}</div>
+  <div class="character-label">
+    Jogador: {{ characterPlayerStatic === "X" ? "X" : "O" }}
+  </div>
+</div>

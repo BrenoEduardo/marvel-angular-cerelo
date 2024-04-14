@@ -8,13 +8,15 @@ import { ChampionsSelectComponent } from './components/champions-select/champion
 import { HttpClientModule } from '@angular/common/http';
 import { MarvelService } from './core/services/marvel.service';
 import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
+import { CharacterComponent } from './components/character/character.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     ChampionsSelectComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,

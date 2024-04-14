@@ -2,35 +2,8 @@
 
 <div class="tic-tac-toe-container">
   <div class="characters">
-    <div class="character">
-      <img
-        [src]="
-          leftCharacter.thumbnail.path +
-          '/portrait_uncanny.' +
-          leftCharacter.thumbnail.extension
-        "
-        alt="Left Character"
-      />
-      <div class="character-label">{{ leftCharacter.name }}</div>
-      <div class="character-label">
-        Jogador: {{ characterPlayerStatic === "X" ? "X" : "O" }}
-      </div>
-    </div>
-    <div class="game-board"></div>
-    <div class="character">
-      <img
-        [src]="
-          rightCharacter.thumbnail.path +
-          '/portrait_uncanny.' +
-          rightCharacter.thumbnail.extension
-        "
-        alt="Right Character"
-      />
-      <div class="character-label">{{ rightCharacter.name }}</div>
-      <div class="character-label">
-        Jogador: {{ characterPlayerStatic === "X" ? "O" : "X" }}
-      </div>
-    </div>
+    <app-character [character]="leftCharacter" [characterPlayerStatic]="characterPlayerStatic === 'X' ? 'X' : 'O'" class="app-character"></app-character>
+    <app-character [character]="rightCharacter" [characterPlayerStatic]="characterPlayerStatic === 'X' ? 'O' : 'X'"></app-character>
   </div>
   <h2 class="game-title">Jogo da Velha</h2>
   <div class="game-board">
