@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as crypto from 'crypto-js';
-import { enviroment } from 'src/app/enviroments/enviroments';
+import { enviroment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
