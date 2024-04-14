@@ -1,27 +1,20 @@
-# CereloProject
+# Projeto Cerelo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.4.
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) na versão 10.2.4. Este projeto tem o intuito de demonstrar minhas habilidades em angular. O projeto consiste
+em um jogo da velha, onde os jogadores são personagens da marvel, estou utilizando a API [Marvel](https://developer.marvel.com)
 
-## Development server
+## Servidor de Desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute `ng serve` para iniciar um servidor de desenvolvimento. Navegue para `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Code scaffolding
+## Execução de Testes Unitários
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng test` para executar os testes unitários via [Karma](https://karma-runner.github.io).
 
-## Build
+## Execução de Testes End-to-End
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute `ng e2e` para executar os testes end-to-end via [Protractor](http://www.protractortest.org/).
 
-## Running unit tests
+## Ajuda Adicional
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obter mais ajuda sobre o Angular CLI, use `ng help` ou consulte a página [Angular CLI Overview and Command Reference](https://angular.io/cli).
