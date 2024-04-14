@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as crypto from 'crypto-js';
+import { Observable } from 'rxjs';
 import { enviroment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class MarvelService {
 
   constructor(private http: HttpClient) {}
 
-  getChampionsMarvel() {
+  getChampionsMarvel(): Observable<any> {
     let ts: any = new Date().getTime();
     let hash = crypto.MD5(ts + this.pvKey + this.pbKey);
 
