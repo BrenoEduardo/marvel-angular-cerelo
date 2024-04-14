@@ -47,11 +47,11 @@
     <h2 class="game-title">Placar de vencedores</h2>
     <div class="left-counter">
       <span>{{ leftCharacter.name }}:</span>
-      <span style="padding-top: 10px">{{ leftWins }}</span>
+      <span style="padding-top: 10px">{{ playerWins[characterPlayerStatic === "X" ? "X" : "O"] }}</span>
     </div>
     <div class="right-counter">
       <span>{{ rightCharacter.name }}:</span>
-      <span style="padding-top: 10px">{{ rightWins }}</span>
+      <span style="padding-top: 10px">{{ playerWins[characterPlayerStatic === "X" ? "O" : "X"] }}</span>
     </div>
   </div>
   <div class="game-status" *ngIf="checkWinner()">

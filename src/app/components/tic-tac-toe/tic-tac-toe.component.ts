@@ -19,11 +19,11 @@ export class TicTacToeComponent {
   rightWins: number = 0;
   winner: string | null = null;
   isGameStarted: boolean = false;
+  playerWins: { [key: string]: number } = { X: 0, O: 0 };
 
   constructor(private route: ActivatedRoute, private location: Location) {
     this.getQueryParams();
   }
-
 
   getQueryParams() {
     this.route.queryParamMap.subscribe((params: any) => {
@@ -69,8 +69,7 @@ export class TicTacToeComponent {
 
   randomizeStartingPlayer() {
     const randomPlayerIndex = Math.floor(Math.random() * 2);
-
-    this.currentPlayer = randomPlayerIndex === 0 ? 'X' : 'O';
+    this.currentPlayer = 'X';
     this.characterPlayerStatic = randomPlayerIndex === 0 ? 'X' : 'O';
   }
 
@@ -80,11 +79,7 @@ export class TicTacToeComponent {
       const winner = this.checkWinner();
       if (winner) {
         this.winner = winner;
-        if (this.winner === 'X') {
-          this.leftWins++;
-        } else if (this.winner === 'O') {
-          this.rightWins++;
-        }
+        this.playerWins[winner]++;
       } else {
         this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
       }
@@ -96,7 +91,7 @@ export class TicTacToeComponent {
     this.winner = null;
   }
 
-  backChampions(){
-    this.location.back()
+  backChampions() {
+    this.location.back();
   }
 }
