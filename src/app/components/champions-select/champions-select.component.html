@@ -27,6 +27,9 @@
         />
       </div>
     </div>
+    <div *ngIf="noCharactersFoundLeft" class="error-message">
+      Nenhum personagem foi encontrado!
+    </div>
   </div>
   <div class="selected-character">
     <div class="character-info">
@@ -97,6 +100,9 @@
           alt="Character Thumbnail"
         />
       </div>
+    </div>
+    <div *ngIf="noCharactersFoundRight" class="error-message">
+      Nenhum personagem foi encontrado!
     </div>
   </div>
 </div>

@@ -16,16 +16,24 @@ export class ChampionsSelectComponent implements OnInit {
   public selectedRightCharacter: Character;
   public showModal: boolean = false;
   public selectedSide: string;
+  public noCharactersFoundLeft: boolean = false;
+  public noCharactersFoundRight: boolean = false;
 
   constructor(private marvelService: MarvelService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllChampions();
   }
-  getAllChampions() {
+  getAllChampions(position?: string) {
     this.marvelService.getChampionsMarvel().subscribe((res: any) => {
-      this.leftChampions = res.data.results.slice(0, 10);
-      this.rightChampions = res.data.results.slice(10);
+      if (position)
+        position === 'left'
+          ? (this.leftChampions = res.data.results.slice(0, 10))
+          : (this.rightChampions = res.data.results.slice(10));
+      else {
+        this.leftChampions = res.data.results.slice(0, 10);
+        this.rightChampions = res.data.results.slice(10);
+      }
     });
   }
   showCharacter(champion: any, side: string): void {
@@ -43,12 +51,21 @@ export class ChampionsSelectComponent implements OnInit {
       this.marvelService.getEspecificChampions(name).subscribe((res: any) => {
         if (position == 'left') {
           this.leftChampions = res.data.results;
+          res.data.results.length == 0
+            ? (this.noCharactersFoundLeft = true)
+            : (this.noCharactersFoundLeft = false);
         } else {
           this.rightChampions = res.data.results;
+          res.data.results.length == 0
+            ? (this.noCharactersFoundRight = true)
+            : (this.noCharactersFoundRight = false);
         }
       });
     } else {
-      this.getAllChampions();
+      position == 'left'
+        ? (this.noCharactersFoundLeft = false)
+        : (this.noCharactersFoundRight = false);
+      this.getAllChampions(position);
     }
   }
   openConfirmationModal(): void {

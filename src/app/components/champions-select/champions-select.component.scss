@@ -226,3 +226,21 @@
     }
   }
 }
+.error-message {
+  font-size: 24px;
+  color: rgb(219, 80, 80);
+  text-align: center;
+  animation: blink-animation 2s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
