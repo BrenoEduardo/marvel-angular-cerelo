@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ChampionsSelectComponent } from './components/champions-select/champions-select.component';
-import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
+import { ChampionsSelectComponent } from './pages/champions-select/champions-select.component';
+import { TicTacToeComponent } from './pages/tic-tac-toe/tic-tac-toe.component';
 
 const routes: Routes = [
   { path: '', component: ChampionsSelectComponent },

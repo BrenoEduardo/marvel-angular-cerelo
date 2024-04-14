@@ -18,14 +18,8 @@
   </div>
   <div class="win-counters">
     <h2 class="game-title">Placar de vencedores</h2>
-    <div class="left-counter">
-      <span>{{ leftCharacter.name }}:</span>
-      <span style="padding-top: 10px">{{ playerWins[characterPlayerStatic === "X" ? "X" : "O"] }}</span>
-    </div>
-    <div class="right-counter">
-      <span>{{ rightCharacter.name }}:</span>
-      <span style="padding-top: 10px">{{ playerWins[characterPlayerStatic === "X" ? "O" : "X"] }}</span>
-    </div>
+    <app-win-counters [character]="leftCharacter" [playerWin]="playerWins[characterPlayerStatic === 'X' ? 'X' : 'O']"></app-win-counters>
+    <app-win-counters [character]="rightCharacter" [playerWin]="playerWins[characterPlayerStatic === 'X' ? 'O' : 'X']"></app-win-counters>
   </div>
   <div class="game-status" *ngIf="checkWinner()">
     <span *ngIf="checkWinner() === 'tie'; else winner">Empate!</span>
