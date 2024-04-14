@@ -18,7 +18,7 @@ import { WinCountersComponent } from './components/win-counters/win-counters.com
     ChampionsSelectComponent,
     TicTacToeComponent,
     CharacterComponent,
-    WinCountersComponent
+    WinCountersComponent,
   ],
   imports: [
     BrowserModule,
